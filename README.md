@@ -1,4 +1,4 @@
-This repository includes the evaluation code for the paper "Regularizing Proxies with Multi-AdversarialTraining for Unsupervised Domain-AdaptiveSemantic Segmentation". The whole package will be made public soom.
+This repository includes the evaluation code for the paper "**Regularizing Proxies with Multi-Adversarial Training for Unsupervised Domain-Adaptive Semantic Segmentation** ([Arxiv Link](https://arxiv.org/pdf/1907.12282.pdf))". The whole package will be made public soom.
 
 ## Dependencies:
 mxnet
