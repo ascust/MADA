@@ -1,0 +1,62 @@
+---
+backbone: "resnet101"
+model_root: "../model_zoo"
+data_root: "../data_root"
+kvstore: "device"
+mean:
+    - 0.485
+    - 0.456
+    - 0.406
+var:
+  - 0.229
+  - 0.224
+  - 0.225
+num_class: 19
+
+TRAIN:
+  source_dataset: "pseudo_cs"
+  source_shorter_min: 1
+  source_shorter_max: 3000
+  source_min_scale: 0.7
+  source_max_scale: 1.3
+  source_crop_size:
+    - 640
+    - 640
+  source_random_flip: True
+  source_random_gaussian: False
+  target_dataset: "cityscapes"
+  target_shorter_min: 512
+  target_shorter_max: 512
+  target_min_scale: 1.0
+  target_max_scale: 1.0
+  target_crop_size:
+    - 1024
+    - 512
+  target_random_flip: True
+  target_random_gaussian: False
+  disp_freq: 10
+  batch_size: 16
+  iters: 40000
+  seg_lr: 0.01
+  momentum: 0.9
+  wd: 0.0005
+  colorjitter: False
+  colorjitter_params:
+    - 0.5
+    - 0.1
+    - 0.1
+    - 0.1
+  save_freq: 5000
+  use_syncbn: True
+  use_global_stats: False
+  workers: 4
+
+EVAL:
+  dataset: "cityscapes"
+  shorter_min: 1
+  shorter_max: 3000
+  multi_eval: True 
+  tar_folder: "images"
+  output_folder: "outputs"
+  workers: 4
+...
